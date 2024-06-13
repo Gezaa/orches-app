@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
+import Dashboard from './components/Dashboard'; // Import the Dashboard component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <div>
+          <Routes>
+            <Route path="/" element={<div className="flex w-full h-screen items-center justify-center"><Login /></div>} />
+            <Route path="/create-account" element={<div className="flex w-full h-screen items-center justify-center"><CreateAccount /></div>} />
+            {/* Dashboard route is nested within the main div */}
+            <Route path="/dashboard" element={<div className="h-screen bg-gray-200"><Dashboard /></div>} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
