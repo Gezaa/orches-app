@@ -6,19 +6,19 @@ function Sidebar({ isOpen, toggleSidebar }) {
   return (
     <>
       {!isOpen && (
-        <div className="fixed top-0 left-0 w-16 h-full bg-gray-800 z-50 flex items-start justify-center">
+        <div className="fixed top-0 left-0 w-16 h-full bg-green-700 z-50 flex items-start justify-center">
           <button onClick={toggleSidebar} className="pt-4 mt-4 text-white">
             <AiOutlineMenu size={24} />
           </button>
         </div>
       )}
       <div
-        className={`h-full bg-gray-800 w-64 overflow-y-auto transition-all duration-300 fixed top-0 ${isOpen ? 'left-0' : '-left-64'} z-40`}
+        className={`h-full bg-green-700 w-64 overflow-y-auto transition-all duration-300 fixed top-0 ${isOpen ? 'left-0' : '-left-64'} z-40`}
         id="sidebar"
       >
         {isOpen && (
           <>
-            <div className="flex items-center justify-between pl-1 pr-3 pt-4 pb-0 mb-8 border-b border-gray-700">
+            <div className="flex items-center justify-between pl-1 pr-3 pt-4 pb-0 mb-8 border-b border-white">
               <button onClick={toggleSidebar} className="p-2 m-2 ml-0 text-white">
                 <AiOutlineMenu size={24} />
               </button>
@@ -29,17 +29,17 @@ function Sidebar({ isOpen, toggleSidebar }) {
                 <AiOutlineHome className="mr-2" size={20} />
                 Dashboard
               </Link>
-              <hr className="my-4 border-gray-700" />
+              <hr className="my-4 border-white" />
               <Link to="/configuration" className="flex items-center text-white p-2 rounded hover:bg-gray-700 transition-colors duration-200">
                 <AiOutlineSetting className="mr-2" size={20} />
                 Configuration
               </Link>
-              <hr className="my-4 border-gray-700" />
+              <hr className="my-4 border-white" />
               <Link to="/monitoring" className="flex items-center text-white p-2 rounded hover:bg-gray-700 transition-colors duration-200">
                 <AiOutlineMonitor className="mr-2" size={20} />
                 Monitoring
               </Link>
-              <hr className="my-4 border-gray-700" />
+              <hr className="my-4 border-white" />
             </nav>
           </>
         )}

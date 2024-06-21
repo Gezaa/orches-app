@@ -4,7 +4,7 @@ export default function Dashboard() {
     return (
         <div className="h-screen flex flex-col">
             {/* Navbar */}
-            <nav className="bg-gray-800 text-white w-full px-6 py-4">
+            <nav className="bg-green-700 text-white w-full px-6 py-4">
                 <div className="container mx-auto flex justify-between items-center">
                     <div>
                         <h1 className="text-xl font-bold">Dashboard</h1>
