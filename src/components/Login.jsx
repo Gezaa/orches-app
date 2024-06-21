@@ -17,7 +17,7 @@ export default function Login() {
     };
 
     const handleSignIn = () => {
-        navigate('/dashboard');
+        navigate('/');
     };
 
     return (

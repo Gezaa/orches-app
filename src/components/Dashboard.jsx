@@ -1,4 +1,3 @@
-// Dashboard.js
 import React from 'react';
 
 export default function Dashboard() {
@@ -15,8 +14,8 @@ export default function Dashboard() {
             </nav>
 
             {/* Main Content */}
-            <div className="flex-grow bg-gray-100 p-6">
-                <h1 className="text-4xl font-bold text-gray-800">Welcome to the Dashboard!</h1>
+            <div className="flex-grow bg-gray-100 px-8 py-6">
+                <h1 className="text-4xl font-bold text-gray-800">Products XYZ</h1>
                 {/* Add your dashboard content here */}
             </div>
         </div>

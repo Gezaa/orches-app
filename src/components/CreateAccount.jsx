@@ -18,11 +18,11 @@ export default function CreateAccount() {
     };
 
     const handleBackToLogin = () => {
-        navigate('/');
+        navigate('/login');
     };
 
     const handleCreateAccount = () => {
-        navigate('/dashboard');
+        navigate('/');
     };
 
     return (
