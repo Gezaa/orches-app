@@ -1,68 +1,98 @@
 import React from 'react';
-import { AiOutlineFileAdd, AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineSync, AiOutlineRollback, AiOutlineReload } from 'react-icons/ai';
+import { AiOutlineFileAdd, AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineSync, AiOutlineBarChart, AiOutlineCalendar } from 'react-icons/ai';
 
 export default function Dashboard() {
-    return (
-        <div className="h-screen flex flex-col">
-            {/* Navbar */}
-            <nav className="bg-green-700 text-white w-full px-6 py-4">
-                <div className="container mx-auto flex justify-between items-center">
-                    <h1 className="text-xl font-bold">Dashboard</h1>
-                    {/* Add any additional navbar items here */}
-                </div>
-            </nav>
+    const cards = [
+        { title: 'Order Created', icon: AiOutlineFileAdd, value: 150, color: 'bg-blue-500' },
+        { title: 'Order Success', icon: AiOutlineCheckCircle, value: 120, color: 'bg-green-500' },
+        { title: 'Order Failed', icon: AiOutlineCloseCircle, value: 10, color: 'bg-red-500' },
+        { title: 'Order In Progress', icon: AiOutlineSync, value: 30, color: 'bg-yellow-500' },
+    ];
 
-            {/* Main Content */}
-            <div className="flex-grow bg-gray-100 px-8 py-6">
-                <h1 className="text-4xl font-bold text-gray-800 mb-4">Summary</h1>
-                <div className="grid gap-6 grid-cols-1 md:grid-cols-3 xl:grid-cols-3">
-                    {/* Order Created */}
-                    <div className="p-6 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                        <div className="flex items-center mb-2">
-                            <AiOutlineFileAdd size={24} className="mr-2" />
-                            <h2 className="text-xl font-bold">Order Created</h2>
-                        </div>
-                        <p className="text-2xl font-bold">150</p> {/* Replace with dynamic data */}
+    return (
+        <div className="min-h-screen bg-gray-100 p-8">
+            <div className="max-w-7xl mx-auto">
+                <div className="flex justify-between items-center mb-8">
+                    <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
+                    <div className="flex space-x-4">
+                        <button className="bg-white text-gray-600 px-4 py-2 rounded-md shadow-sm hover:bg-gray-50 transition duration-150 ease-in-out flex items-center">
+                            <AiOutlineCalendar className="mr-2" />
+                            Today
+                        </button>
+                        <button className="bg-green-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-green-600 transition duration-150 ease-in-out flex items-center">
+                            <AiOutlineBarChart className="mr-2" />
+                            Generate Report
+                        </button>
                     </div>
-                    {/* Order Success */}
-                    <div className="p-6 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                        <div className="flex items-center mb-2">
-                            <AiOutlineCheckCircle size={24} className="mr-2" />
-                            <h2 className="text-xl font-bold">Order Success</h2>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    {cards.map((card, index) => (
+                        <div key={index} className={`${card.color} rounded-lg shadow-md overflow-hidden`}>
+                            <div className="p-6 text-white">
+                                <div className="flex justify-between items-center mb-4">
+                                    <card.icon size={24} />
+                                    <span className="text-xs font-semibold bg-white bg-opacity-20 px-2 py-1 rounded-full">
+                                        Last 24h
+                                    </span>
+                                </div>
+                                <h2 className="text-lg font-semibold mb-2">{card.title}</h2>
+                                <p className="text-3xl font-bold">{card.value.toLocaleString()}</p>
+                            </div>
+                            <div className="bg-white bg-opacity-20 px-6 py-2">
+                                <span className="text-sm text-white">View Details</span>
+                            </div>
                         </div>
-                        <p className="text-2xl font-bold">120</p> {/* Replace with dynamic data */}
+                    ))}
+                </div>
+
+                <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                        <h2 className="text-xl font-semibold text-gray-800">Recent Orders</h2>
+                        <button className="text-green-500 hover:text-green-600 font-semibold transition duration-150 ease-in-out">
+                            View All
+                        </button>
                     </div>
-                    {/* Order Failed */}
-                    <div className="p-6 bg-gradient-to-r from-red-400 to-red-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                        <div className="flex items-center mb-2">
-                            <AiOutlineCloseCircle size={24} className="mr-2" />
-                            <h2 className="text-xl font-bold">Order Failed</h2>
-                        </div>
-                        <p className="text-2xl font-bold">10</p> {/* Replace with dynamic data */}
-                    </div>
-                    {/* Order In Progress */}
-                    <div className="p-6 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                        <div className="flex items-center mb-2">
-                            <AiOutlineSync size={24} className="mr-2" />
-                            <h2 className="text-xl font-bold">Order In Progress</h2>
-                        </div>
-                        <p className="text-2xl font-bold">30</p> {/* Replace with dynamic data */}
-                    </div>
-                    {/* Order Rollback */}
-                    <div className="p-6 bg-gradient-to-r from-purple-400 to-purple-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                        <div className="flex items-center mb-2">
-                            <AiOutlineRollback size={24} className="mr-2" />
-                            <h2 className="text-xl font-bold">Order Rollback</h2>
-                        </div>
-                        <p className="text-2xl font-bold">5</p> {/* Replace with dynamic data */}
-                    </div>
-                    {/* Order Retried */}
-                    <div className="p-6 bg-gradient-to-r from-orange-400 to-orange-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                        <div className="flex items-center mb-2">
-                            <AiOutlineReload size={24} className="mr-2" />
-                            <h2 className="text-xl font-bold">Order Retried</h2>
-                        </div>
-                        <p className="text-2xl font-bold">15</p> {/* Replace with dynamic data */}
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
+                                <tr>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody className="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#12345</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                            Completed
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">John Doe</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" className="text-indigo-600 hover:text-indigo-900">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#12346</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                            In Progress
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jane Smith</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" className="text-indigo-600 hover:text-indigo-900">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
