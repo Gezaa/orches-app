@@ -1,11 +1,13 @@
 import React from 'react';
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 
  
 export function Table() {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                     <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-                        <h2 className="text-xl font-semibold text-gray-800">Recent Orders</h2>
+                        <h2 className="text-xl font-semibold text-gray-800">Order Monitoring</h2>
                         <button className="text-green-500 hover:text-green-600 font-semibold transition duration-150 ease-in-out">
                             View All
                         </button>
@@ -14,14 +16,14 @@ export function Table() {
                         <table className="min-w-full divide-y divide-gray-200">
                             <thead className="bg-gray-50">
                                 <tr>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                    <th className=" px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                    <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-white divide-y divide-gray-200">
+                            <tbody className="text-center bg-white divide-y divide-gray-200">
                                 <tr>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#12345</td>
                                     <td className="px-6 py-4 whitespace-nowrap">
@@ -31,8 +33,9 @@ export function Table() {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">John Doe</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <a href="#" className="text-indigo-600 hover:text-indigo-900">View</a>
+                                    <td className="flex flex-wrap px-6 py-4 justify-evenly whitespace-nowrap text-sm font-medium">
+                                    <a href="#"><FaEdit size={22}/></a>
+                                    <a href="#"><RiDeleteBin2Fill size={22}/></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -44,8 +47,10 @@ export function Table() {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jane Smith</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <a href="#" className="text-indigo-600 hover:text-indigo-900">View</a>
+                                    <td className="flex flex-wrap justify-evenly px-6 py-4 whitespace-nowrap text-sm font-medium inline">
+                                        <a href="#"><FaEdit size={22}/></a>
+                                        <a href="#"><RiDeleteBin2Fill size={22}/></a>
+                                    
                                     </td>
                                 </tr>
                             </tbody>
