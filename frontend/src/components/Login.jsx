@@ -12,9 +12,9 @@ export default function Login() {
         setShowPassword(!showPassword);
     };
 
-    const handleCreateAccount = () => {
-        navigate('/create-account'); // Navigate to the Create Account page
-    };
+    // const handleCreateAccount = () => {
+    //     navigate('/create-account'); // Navigate to the Create Account page
+    // };
 
     const handleSignIn = () => {
         navigate('/');
@@ -62,7 +62,7 @@ export default function Login() {
                     </button>
                     <button className='font-medium text-base text-blue-400 hover:scale-[1.05] ease-in-out'>Forgot password?</button>
                 </div>
-                <div className='mt-8 flex justify-center items-center'>
+                {/* <div className='mt-8 flex justify-center items-center'>
                     <p className='font-medium text-base'>Don't have an account?</p>
                     <button 
                         className='text-blue-400 text-base font-medium ml-2 hover:scale-[1.05] ease-in-out' 
@@ -70,7 +70,7 @@ export default function Login() {
                     >
                         Create an account
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
