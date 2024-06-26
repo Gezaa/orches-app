@@ -54,13 +54,13 @@ export default function Layout() {
                     <div className="absolute inset-6 top-0 left-0 bg-gray-100 rounded-3xl shadow-lg overflow-hidden">
                         <div className="h-full overflow-auto scroll-container relative">
                             {showTopFade && (
-                                <div className="sticky top-0 left-0 right-0 h-16 bg-gradient-to-b from-gray-50 to-transparent pointer-events-none z-10"></div>
+                                <div className="sticky top-0 left-0 right-0 h-16 bg-gradient-to-b from-gray-100 to-transparent pointer-events-none z-10"></div>
                             )}
-                            <div className="p-6 relative">
+                            <div className="p-6 relative min-h-full bg-gray-100">
                                 <Outlet />
                             </div>
                             {showBottomFade && (
-                                <div className="sticky bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none z-10"></div>
+                                <div className="sticky bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-100 to-transparent pointer-events-none z-10"></div>
                             )}
                         </div>
                     </div>
