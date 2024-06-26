@@ -1,10 +1,15 @@
 import React from 'react';
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin2Fill } from "react-icons/ri";
-import { AiOutlineUser, AiOutlineMenu, AiOutlineLogout } from 'react-icons/ai';
 
+import { MdOutlineReplayCircleFilled } from "react-icons/md";
+import { Link } from 'react-router-dom';
  
-export function Table() {
+export function Table({handleDetails}) {
+    const navigate = useNavigate();
+    const handleDetails = () => {
+        navigate('/monitoring-details');
+    };
   return (
     <div className="my-3 bg-white rounded-lg shadow-md overflow-hidden">
                     <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
@@ -27,7 +32,7 @@ export function Table() {
                             <tbody className="text-center bg-white divide-y divide-gray-200">
                                 <tr>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        <a href="#" className="hover:text-cyan-600 ">       734068550</a></td>
+                                        <Link  to="/monitoring-details" className="hover:text-cyan-600 " onClick={handleDetails}>       734068550</Link></td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                     OrderOnProgress
                                     </td>
@@ -36,12 +41,12 @@ export function Table() {
                                         </span></td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
                                     <td className="flex flex-wrap px-6 py-4 justify-evenly whitespace-nowrap text-sm font-medium">
-                                    <a href="#"><FaEdit size={22}/></a>
+                                    <a href="#"><MdOutlineReplayCircleFilled size={24}/></a>
                                     <a href="#"><RiDeleteBin2Fill size={22}/></a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 ">       734068551</a></td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 " onClick={handleDetails}>       734068551</a></td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                     OrderCompleted
                                     </td>
@@ -50,13 +55,13 @@ export function Table() {
                                         </span></td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
                                     <td className="flex flex-wrap justify-evenly px-6 py-4 whitespace-nowrap text-sm font-medium inline">
-                                        <a href="#"><FaEdit size={22}/></a>
+                                        <a href="#"><MdOutlineReplayCircleFilled size={24}/></a>
                                         <a href="#"><RiDeleteBin2Fill size={22}/></a>
                                     
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 ">       734068552</a></td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 " onClick={handleDetails}>       734068552</a></td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                     OrderCompleted
                                     </td>
@@ -65,13 +70,13 @@ export function Table() {
                                         </span></td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
                                     <td className="flex flex-wrap justify-evenly px-6 py-4 whitespace-nowrap text-sm font-medium inline">
-                                        <a href="#"><FaEdit size={22}/></a>
+                                        <a href="#"><MdOutlineReplayCircleFilled size={24}/></a>
                                         <a href="#"><RiDeleteBin2Fill size={22}/></a>
                                     
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 ">       734068553</a></td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 " onClick={handleDetails}>       734068553</a></td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                     OrderCompleted
                                     </td>
@@ -80,13 +85,13 @@ export function Table() {
                                         </span></td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
                                     <td className="flex flex-wrap justify-evenly px-6 py-4 whitespace-nowrap text-sm font-medium inline">
-                                        <a href="#"><FaEdit size={22}/></a>
+                                        <a href="#"><MdOutlineReplayCircleFilled size={24}/></a>
                                         <a href="#"><RiDeleteBin2Fill size={22}/></a>
                                     
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 ">       734068554</a></td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 " onClick={handleDetails}>       734068554</a></td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                     OrderCompleted
                                     </td>
@@ -95,13 +100,13 @@ export function Table() {
                                         </span></td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
                                     <td className="flex flex-wrap justify-evenly px-6 py-4 whitespace-nowrap text-sm font-medium inline">
-                                        <a href="#"><FaEdit size={22}/></a>
+                                        <a href="#"><MdOutlineReplayCircleFilled size={24}/></a>
                                         <a href="#"><RiDeleteBin2Fill size={22}/></a>
                                     
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 ">       734068555</a></td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><a href="#" className="hover:text-cyan-600 " onClick={handleDetails}>       734068555</a></td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                     OrderCompleted
                                     </td>
@@ -110,7 +115,7 @@ export function Table() {
                                         </span></td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-06-25</td>
                                     <td className="flex flex-wrap justify-evenly px-6 py-4 whitespace-nowrap text-sm font-medium inline">
-                                        <a href="#"><FaEdit size={22}/></a>
+                                        <a href="#"><MdOutlineReplayCircleFilled size={24}/></a>
                                         <a href="#"><RiDeleteBin2Fill size={22}/></a>
                                     
                                     </td>
