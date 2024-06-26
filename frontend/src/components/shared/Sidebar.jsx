@@ -18,7 +18,7 @@ function Sidebar({ isOpen }) {
             className={`
                 h-screen bg-green-700 transition-all duration-300 fixed top-0 left-0
                 ${isOpen ? 'w-64' : 'w-20'}
-                z-30 pt-16 shadow-lg
+                z-30 pt-16 rounded-tr-3xl
             `}
         >
             <nav className="flex flex-col space-y-2 px-3 pt-6">

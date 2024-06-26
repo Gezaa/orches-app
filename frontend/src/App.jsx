@@ -6,8 +6,8 @@ import Dashboard from './components/Dashboard';
 import Configuration from './components/Configuration';
 import Monitoring from './components/Monitoring';
 import Login from './components/Login';
-import CreateAccount from './components/CreateAccount.jsx';
-
+import CreateAccount from './components/CreateAccount';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
               <Route index element={<Dashboard />} />
               <Route path="/configuration" element={<Configuration />} />
               <Route path="/monitoring" element={<Monitoring />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
             <Route path="/login" element={<div className="flex w-full h-screen items-center justify-center"><Login /></div>} />
             <Route path="/create-account" element={<div className="flex w-full h-screen items-center justify-center"><CreateAccount /></div>} />

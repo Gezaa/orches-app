@@ -1,3 +1,4 @@
+// Navbar.jsx
 import React from 'react';
 import { AiOutlineUser, AiOutlineMenu, AiOutlineLogout } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
@@ -26,16 +27,16 @@ function Navbar({ toggleSidebar, isOpen }) {
                 <div className="flex items-center space-x-2">
                     <Link 
                         to="/profile" 
-                        className="flex items-center text-white hover:bg-green-600 p-2 rounded-lg transition-colors duration-200"
+                        className="flex items-center text-white bg-green-600 hover:bg-green-500 px-4 py-2 rounded-full transition-colors duration-200"
                     >
-                        <AiOutlineUser size={24} className="mr-2" />
+                        <AiOutlineUser size={20} className="mr-2" />
                         <span className="hidden md:inline">Profile</span>
                     </Link>
                     <button
                         onClick={handleLogout}
-                        className="flex items-center text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded-lg transition-colors duration-200"
+                        className="flex items-center text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-full transition-colors duration-200"
                     >
-                        <AiOutlineLogout size={24} className="mr-2" />
+                        <AiOutlineLogout size={20} className="mr-2" />
                         <span className="hidden md:inline">Logout</span>
                     </button>
                 </div>
