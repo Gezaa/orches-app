@@ -8,7 +8,6 @@ import Monitoring from './components/Monitoring';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
 import Profile from './components/Profile';
-import CreateAccount from './components/CreateAccount.jsx';
 import MonitoringDetails from './components/MonitoringDetails.jsx';
 function App() {
   return (
