@@ -2,8 +2,9 @@
 import React, { useState, useMemo } from 'react';
 import { Table } from './shared/Table';
 import ButtonPagination from './shared/ButtonPagination';
+import AlertDialog from './shared/AlertDialog';
 import { MdOutlineReplayCircleFilled } from "react-icons/md";
-import { RiDeleteBin2Fill } from "react-icons/ri";
+import { AiOutlineRollback } from "react-icons/ai";
 
 const generateData = (count) => {
   return Array.from({ length: count }, (_, index) => ({
@@ -14,20 +15,44 @@ const generateData = (count) => {
   }));
 };
 
-export default function Configuration() {
+export default function Monitoring() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [showAll, setShowAll] = useState(false);
-  const itemsPerPage = 10;
-
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+  const [alertType, setAlertType] = useState('');
+  const itemsPerPage = 5;
 
   const headers = ['Order ID', 'Milestones', 'Status', 'Last Update', 'Actions'];
   
   const monitoringData = useMemo(() => generateData(50), []);
 
   const actions = [
-    () => <button className="text-blue-600 hover:text-blue-900"><MdOutlineReplayCircleFilled size={20} /></button>,
-    () => <button className="text-red-600 hover:text-red-900"><RiDeleteBin2Fill size={20} /></button>
+    (data) => (
+      <button 
+        onClick={() => {
+          setSelectedItem(data);
+          setAlertType('retry');
+          setIsAlertOpen(true);
+        }}
+        className="text-blue-600 hover:text-blue-900 flex items-center"
+      >
+        <MdOutlineReplayCircleFilled size={20} className="mr-1" />
+      </button>
+    ),
+    (data) => (
+      <button 
+        onClick={() => {
+          setSelectedItem(data);
+          setAlertType('rollback');
+          setIsAlertOpen(true);
+        }}
+        className="text-yellow-600 hover:text-yellow-900 flex items-center"
+      >
+        <AiOutlineRollback size={20} className="mr-1" />
+      </button>
+    ),
   ];
 
   const filteredData = useMemo(() => {
@@ -44,13 +69,25 @@ export default function Configuration() {
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
+  const handleConfirm = () => {
+    if (alertType === 'retry') {
+      // Logic untuk retry
+      console.log('Retrying for:', selectedItem);
+    } else if (alertType === 'rollback') {
+      // Logic untuk rollback
+      console.log('Rolling back for:', selectedItem);
+    }
+    setSelectedItem(null);
+  };
+
   return (
     <>
       <Table 
-        title="Configuration Administrator"
-        headers={headers} 
+        title="Order Monitoring"
+        headers={['Order ID', 'Milestones', 'Status', 'Last Update', 'Retry/Rollback']}
         data={currentItems} 
         actions={actions}
+        linkPath="/monitoring-details"
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
         showAll={showAll}
@@ -65,6 +102,13 @@ export default function Configuration() {
           />
         </div>
       )}
+      <AlertDialog
+        isOpen={isAlertOpen}
+        onClose={() => setIsAlertOpen(false)}
+        title="Confirm Action"
+        message={alertType === 'retry' ? "Are you sure you want to retry this order?" : "Are you sure you want to rollback this order?"}
+        onConfirm={handleConfirm}
+      />
     </>
   );
 }
