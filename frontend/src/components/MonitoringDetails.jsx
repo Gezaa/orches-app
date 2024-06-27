@@ -2,7 +2,11 @@ import React from 'react'
 
 const MonitoringDetails = () => {
   return (
+    <>
     <div>MonitoringDetails</div>
+    </>
+    
+
   )
 }
 

@@ -5,6 +5,7 @@ import ButtonPagination from './shared/ButtonPagination';
 import { MdOutlineReplayCircleFilled } from "react-icons/md";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 
+// Data for monitoring table
 const generateData = (count) => {
   return Array.from({ length: count }, (_, index) => ({
     orderId: `73406855${index}`,
@@ -30,6 +31,7 @@ export default function Configuration() {
     () => <button className="text-red-600 hover:text-red-900"><RiDeleteBin2Fill size={20} /></button>
   ];
 
+
   const filteredData = useMemo(() => {
     return monitoringData.filter(item =>
       Object.values(item).some(value =>
@@ -47,10 +49,11 @@ export default function Configuration() {
   return (
     <>
       <Table 
-        title="Configuration Administrator"
+        title="Order Monitoring"
         headers={headers} 
         data={currentItems} 
         actions={actions}
+        linkPath={'/src/components/MonitoringDetails.jsx'}
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
         showAll={showAll}
